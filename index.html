@@ -1,1 +1,515 @@
-My GitHub Page
+<!doctype html>
+<!--
+  Original: https://github.com/bartaz/impress.js
+  Japanese: https://github.com/minghai/impress.js
+-->
+
+<!--
+
+    Welcome to the light side of the source, young padawan.
+    ソースの光明面にようこそ、若きパダワンよ
+
+    One step closer to learn something interesting you are...
+    もう一歩近づきなさい。面白いことを教えよう...
+
+                               ____                  
+                            _.' :  `._               
+                        .-.'`.  ;   .'`.-.           
+               __      / : ___\ ;  /___ ; \      __  
+             ,'_ ""--.:__;".-.";: :".-.":__;.--"" _`,
+             :' `.t""--.. '<@.`;_  ',@>` ..--""j.' `;
+                  `:-.._J '-.-'L__ `-- ' L_..-;'     
+                    "-.__ ;  .-"  "-.  : __.-"       
+                        L ' /.------.\ ' J           
+                         "-.   "--"   .-"            
+                        __.l"-:_JL_;-";.__           
+                     .-j/'.;  ;""""  / .'\"-.        
+                   .' /:`. "-.:     .-" .';  `.      
+                .-"  / ;  "-. "-..-" .-"  :    "-.   
+             .+"-.  : :      "-.__.-"      ;-._   \  
+             ; \  `.; ;                    : : "+. ; 
+             :  ;   ; ;                    : ;  : \: 
+             ;  :   ; :                    ;:   ;  : 
+            : \  ;  :  ;                  : ;  /  :: 
+            ;  ; :   ; :                  ;   :   ;: 
+            :  :  ;  :  ;                : :  ;  : ; 
+            ;\    :   ; :                ; ;     ; ; 
+            : `."-;   :  ;              :  ;    /  ; 
+             ;    -:   ; :              ;  : .-"   : 
+             :\     \  :  ;            : \.-"      : 
+              ;`.    \  ; :            ;.'_..--  / ; 
+              :  "-.  "-:  ;          :/."      .'  :
+               \         \ :          ;/  __        :
+                \       .-`.\        /t-""  ":-+.   :
+                 `.  .-"    `l    __/ /`. :  ; ; \  ;
+                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
+                    \ / .-"   /.     .'.' ;_:'    ;  
+                     :-""-.`./-.'     /    `.___.'   
+                           \ `t  ._  /               
+                            "-.t-._:'                
+
+-->
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    impress.jsの使い方を知りたい?
+    
+    You've made the first, very important step -- you're reading the source code.
+    And that's how impress.js presentations are built -- with HTML and CSS code.
+    最初のとても重要なステップを君は行った。君は今ソースコードを読んでいる。
+    それはimpress.jsのプレゼンがどう作られているかだ。HTMLとCSSのコードと共に
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    And what is even more important, you need to be a designer, too, because there are no default
+    styles for impress.js presentations, there is no default or automatic layout for them.
+    信じてほしい。君がimpress.jsを効果的に使えるようになるにはかなりのHTMLとCSSに関するスキルが必要だ。
+    そしてより重要な事は、君がデザイナーでもあること。なぜならimpress.jsのプレゼンテーションには
+    デフォルトのスタイルがない。デフォルトの、または自動的なレイアウトがない。
+    
+    You need to design and build it by hand.
+    自分でデザインしながら構築する必要がある。
+    
+    So...
+    それでも...
+    
+    Would you still like to know how to use impress.js?
+    まだimpress.jsの使い方を知りたいかい?
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheet. Script adds all styles it needs for
+        presentation to work.
+        Impress.jsは外部のスタイルシートに一切依存しない。スクリプトがプレゼンテーションを実行するのに
+        必要な全てのスタイルを追加する
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        この下にあるスタイルはデモプレゼンテーションだけのためだ。impress.jsのクラスがどうやって
+        プレゼンテーションのステップをスタイルするのに使われているか見てみろ。
+        でも君のプレゼンテーションでそれらをそのまま使ってほしくはない。
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        創造的であれ。君自身のものを作れ。impress.jsのプレゼンが全て同じようには見えてほしくないんだ。
+        わかるだろ?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        君自身のプレゼンを作る時にはこのファイルは消すんだ。ゼロから作れ。楽しいぞ！
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body>
+
+<!--
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    プレゼンのラッパーだ。このエレメントの中で全てのimpress.jsの魔法が起こっている
+    `<div>`である必要はない。ここでは`id`だけが重要だ。スクリプトがそれを使って見つけているから。
+    
+    It's worth to notice the `impress-not-supported` class. This class means, that browser doesn't
+    support features required by impress.js, so you can apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    `impress-not-supported`クラスを指定することには価値がある。このクラスはブラウザがimpress.jsが
+    必要とする機能をサポートしていないことを意味する。そこでCSSにある代替策のスタイルを適用することができる
+    このエレメントに対しこのクラスを手で追加する必要はない。スクリプトがブラウザの機能が足りないときには
+    このクラスを追加するからだ。しかしHTMLに入れておくことはユーザがJavaScriptを使用していない場合にも
+    代替のスタイルを得られることを意味する。
+    
+    The class name on this element also depends on currently active presentation step. More details about
+    it can be found below, when `hint` element is being described.
+    このエレメントのクラスネームは現在のアクティブなプレゼンテーションステップにも依存する。
+    より詳細は以下で`hint`要素について説明する所で見つけられる。
+    
+-->
+<div id="impress" class="impress-not-supported">
+
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+    <!--
+        
+        Here is where interesting thing start to happen.
+        ここから面白いことが始まる。
+        
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        プレゼンテーションの各ステップは`#impress`の中のクラス名に`step`を持つ要素でなければならない
+        これらのステップ要素はimpress.jsにより位置付けられ、回転し、スケールする。
+        `camera`がプレゼンの各ステップを表示する
+        
+        Positioning information is passed through data attributes.
+        位置の情報はdata属性を通して与えられる
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+        以下の例ではxとyの位置のみを`data-x="-1000"と`data-y="-1500"属性にてstep要素に与えている
+        これはプレゼンの'canvas'において、要素の**真ん中**、そう真ん中の点がx=-1000とy=-1500になることを意味している。
+        
+        It will not be rotated or scaled.
+        これは回転しないし、スケールしない。
+        
+    -->
+    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+      <!--
+        <q>Aren't you just <b>bored</b> with all those slides-based presentations?</q>
+        -->
+        <q>スライド式プレゼンに<b>飽き</b>ないか?</q>
+    </div>
+
+    <!--
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        step要素の`id`属性はURL上で識別されるために使われる。しかしこれはオプションだ。
+        もし定義されていなければ、デフォルトの値として`step-N`がN枚目のスライドとして用いられる
+        
+        So in the example below it'll be `step-2`.
+        従って以下の例では`step-2`になる
+        
+        The hash part of the url when this step is active will be `#/step-2`.
+        urlのハッシュ(`#`)部分はこのステップでは`#/step-2`となるだろう
+        
+        You can also use `#step-2` in a link, to point directly to this particular step.
+        リンクで`#step-2`を使うことができ、このステップを直接指すことができる。
+        
+        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
+        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
+        注意してほしいのは`#/step-2`(スラッシュ付き)もまたリンクにて使えるがお勧めしない
+        クラシックな`id`ベースのリンク、例えば`#step-2`ならフォールバックモードでも動く
+        
+    -->
+    <div class="step slide" data-x="0" data-y="-1500">
+      <!--
+        <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
+        -->
+        <q><strong>現在のブラウザ</strong>は「クラシック」なスライドの<strong>限界</strong>を受けつぐべきか?</q>
+    </div>
+
+    <div class="step slide" data-x="1000" data-y="-1500">
+      <!--
+        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+        -->
+        <q>君のトークを<strong>最高のビジュアル</strong>にして、人を<strong>感動</strong>させたいか?</q>
+    </div>
+
+    <!--
+        
+        This is an example of step element being scaled.
+        これはスケールしたstep要素の例だ
+        
+        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
+        element will be 4 times larger than the others.
+        From presentation and transitions point of view it means, that it will have to be scaled
+        down (4 times) to make it back to it's correct size.
+        再び`data-`属性を用いている。今回は`data-scale="4"`だ。これは他よりも4倍大きいことを意味する
+        プレゼンテーションとトランジションの観点からはこれは元の大きさに戻すのに4倍小さくする必要がある
+        
+    -->
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <span class="try">ならコレだ</span>
+        <h1>impress.js<sup>*</sup></h1>
+        <span class="footnote"><sup>*</sup> 韻はたまたま</span>
+    </div>
+
+    <!--
+        
+        This element introduces rotation.
+        この要素では回転を紹介する
+        
+        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
+        element should be rotated by 90 degrees clockwise.
+        おどろき不要の法則から`data-rotate="90"`属性を用いる。これは時計回りに90度回転する
+        
+    -->
+    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
+      <!--
+        <p>It's a <strong>presentation tool</strong> <br/>
+        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
+        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+        -->
+        <p>これは<a href="http://prezi.com">prezi.com</a>の背景に触発された<strong>プレゼンツール</strong>だ<br/>
+        現在のブラウザの<strong>CSS3の変形や遷移の力</strong>を基にしている</p>
+    </div>
+
+    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="7">
+      <!--
+        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
+        -->
+        <p><span class="thoughts">大きな</span><b>想い</b>を形にしろ</p>
+    </div>
+
+    <!--
+        
+        And now it gets really exiting! We move into third dimension!
+        ここからよりエキサイティングになる！3次元に突入するぞ！
+        
+        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
+        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
+        positioned far away from us (by 3000px).
+        `data-x`と`data-y`と同様に、3つ目のZ軸上の位置を`data-z`で定義できる。
+        以下の例では`data-z="-3000"を使用しこの要素が我々から3000px、遠くにいることを意味する。
+        
+    -->
+    <div id="tiny" class="step" data-x="3225" data-y="1825" data-z="-3000" data-rotate="450" data-scale="1">
+      <!--
+        <p>and <b>tiny</b> ideas</p>
+        -->
+        <p>そして <b>小さな</b> アイデアも</p>
+    </div>
+
+    <div id="ing" class="step" data-x="3500" data-y="-950" data-rotate="270" data-scale="6">
+      <!--
+        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
+        -->
+        <p>無限のキャンバスで<br/><b class="positioning">位置付け</b>,<br/><b class="rotating">回転</b>, そして<br/><b class="scaling">拡大縮小</b></p>
+    </div>
+
+    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
+      <!--
+        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
+        -->
+        <p><b>限界</b>は君の<br/><b class="imagination">想像力</b>だけ</p>
+    </div>
+
+    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+        <p>もっと知りたい？</p>
+        <q><a href="http://github.com/minghai/impress.js">ソースを読め</a>ルーク!</q>
+    </div>
+
+    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
+        <p>one more thing...</p>
+    </div>
+
+    <!--
+        
+        And the last one shows full power and flexibility of impress.js.
+        そして最後はimpress.jsの柔軟さと全ての力をお見せしよう
+        
+        You can not only position element in 3D, but also rotate it around any axis.
+        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
+        10 degrees (clockwise) around Y axis.
+        要素は3Dで位置付けられるだけでなく、どの軸に対しても回転できる
+        だからここではこの要素はX軸のまわりに-40度(逆時計回りに40度)回転して、Y軸のまわりに10度(時計回りに)回っている
+
+        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
+        as `data-rotate` (these two are basically aliases).
+        もちろん`data-rotate-z`を用いてZ軸を中心に回転することもできる。それは`data-rotate`と全く同じ効果を持つ
+        (これらの2つは基本的に別名だ)
+        
+    -->
+    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+      <!--
+        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
+        -->
+        <p><span class="have">奥行</span><span class="you">もある</span><span class="noticed">の気付</span><span class="its">いた？</span> <span class="in">つまり</span> <b>3D<sup>*</sup></b></p>
+        <span class="footnote">* preziをやっちまえ ;)</span>
+    </div>
+
+    <!--
+        
+        So to make a summary of all the possible attributes used to position presentation steps, we have:
+        最後にプレゼンテーションの各ステップを位置付ける属性全てについてまとめよう
+        
+        * `data-x`, `data-y`, `data-z` -- they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` -- they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` -- defines the scale of step element; default value is 1
+        * `data-x`, `data-y`, `data-z` -- これらはstep要素のキャンバスにおけるピクセル単位での**中央**の位置を定義する
+          デフォルトは0だ
+        * `data-rotate-x`, `data-rotate-y`, `data-rotate-z` -- これらは要素を与えられた軸を中心に角度で回転する
+          デフォルトは0度だ。`data-rotate`と`data-rotate-z`は全く同じだ
+        * `data-scale` -- step要素のスケールを定義する。デフォルトは1だ
+
+        
+    -->
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    hintはimpress.jsにいかなる意味でも関係がない
+    
+    But it can show you how to use impress.js features in creative way.
+    しかしimpress.jsの機能をどのように使うか創造的な方法で紹介できる
+    
+    When the presentation step is shown (selected) it's element get's the class of "active" and `#impress` root
+    element get's the class based on active step id `step-ID` (where ID is the step id)... It probably is not
+    so clear because of all these IDs in here, so for example when the first step (the one with id of `bored`)
+    is active, `#impress` element get a class of `step-bored`.
+    プレゼンのstepが表示された(選択された)時、その要素のクラスは"active"を取り、`#impress`root要素はclassにアクティブな
+    stepのIDに基づき`step-ID`(IDはstepのIDだ)を得る。
+    たぶんそんなにわかりやすくないだろう。ここにあるID達のせいだ。
+    だから例を挙げよう。最初のstep(idが`bored`のやつ)がアクティブになった時、`#impress`要素は`step-bored`のクラスを得る
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation.
+    このclassは以下のhintにて用いられる。CSSファイルをチェックして、どのようにCSSの遅延アニメーションが表示されるか見て。
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    最後に
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    上に記述した全てを実際に動かすためには、impress.jsをページに取り込む必要がある
+    事前に最小化しておくことをお勧めする
+    
+    In here I just include full source of the script to make it more readable.
+    ここではただ単にソース全体を取り込んでおく。読み易さのために。
+    
+    You also need to call a `impress()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because I should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was to lazy to do so ;)
+    impress.jsプレゼンテーションを初期化するのに`impress()`を呼ぶ必要もある。
+    ドキュメントの最後で行うこと。ベストプラクティスであるだけでなく、全てのドキュメントが準備完了次第に
+    実行する必要があるからだ。
+    もちろん、あらゆる"DOM ready"イベントでラップすることも可能だ。しかし僕はそれが面倒だ ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to API to control the presentation.
+    `impress()`関数はまたプレゼンをコントロールするためのAPIへのアクセスも提供する
+    
+    Just store the result of the call:
+    呼出の結果を保存しておくこと
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    そうすることで3つの関数を呼べる
+    
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation
+        `api.goto( stepElement ) - moves the presentation to given step element (the DOM element of the step).
+        `api.next()` - プレゼンの次のstepに移動する
+        `api.prev()` - プレゼンの前のstepに移動する
+        `api.goto( stepElement ) - プレゼンの与えられたステップ要素に移動する (stepのDOM要素)
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    `impress()`を再実行するだけでもAPIを得ることができる。よって`impress().next()`もまた可能だ。
+    心配するな。再実行してもプレゼンを再度初期化したりはしない。
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    APIのいくつかの使用例としてimpress.jsのソースの最後の部分をチェックしろ
+    APIがイベントハンドラとして利用されている
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    さてこれでimpress.jsのプレゼンを作るのにほとんど全ての必要なことを知ることができた。
+    しかし始める前に...
+    
+    Oh, you've already cloned the code from GitHub?
+    あれ、GitHubからもうコードをcloneしたの?
+    
+    You have it open in text editor?
+    テキストエディタで開いている?
+    
+    Stop right there!
+    そこで止まれ!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    それは素晴しいプレゼンを作る方法じゃない。これはただのコードだ。
+    君の心の中で最初に育てなければならないアイデアを実装したものにすぎない
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    だからものすごいプレゼンを作りたいなら、紙と鉛筆を持て。そしてコンピュータの電源を切るんだ。
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    スケッチして、書いて、描くんだ。自分のアイデアを紙に掃き出せ。何をプレゼンしたいのかmind-mapを構築してみろ
+    それがimpress.jsで後に君が構築するレイアウトに段々と近づいていく方法だ
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    コードに戻るのは紙の上でプレゼンの準備が完了してからだ。それ以前にそうすることには意味がない。
+    なぜなら意味のない点の位置付けに時間を無駄にするに決まっているだろう。
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    もし僕の気が狂っていると思うなら、"Presentation Zen"という名の本を手に取ってみると良い
+    それが素晴しく成功間違いないプレゼンについて全てを教えてくれる
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    よく考えて。impress.jsは君を手助けできない。もし君に話すべき面白いことがないなら。
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    まだ読んでいるの?
+    
+    For real?
+    本当に?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    感動した! ぜひここまで辿りついた理由を聞かせて! (僕は@bartazでtwitterにいる)
+    君を個人的に祝福したいんだ :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    でも今すぐそれをする必要はない。僕のアドバイスを受け入れて暫く休憩を取って。1杯のコーヒーや紅茶、
+    君の飲みたいものなら何でもいいから用意して。そしてグラスを僕のために掲げて欲しい ;)
+    
+    Cheers!
+    乾杯！
+    
+-->
+
